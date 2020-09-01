@@ -3,4 +3,5 @@
 {
   gf-rgl = import ./build-gf-rgl.nix {};
   bnfc = import ./install-bnfc.nix {};
+  gf = (import ./install-bnfc.nix {}).gf;
 }
