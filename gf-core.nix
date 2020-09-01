@@ -1,4 +1,4 @@
-{ nixpkgs ? import <nixpkgs> {} }:
+{ buildEnv }:
     let
     onlyBin = pkg: nixpkgs.buildEnv {
       name = "${pkg.name}";
