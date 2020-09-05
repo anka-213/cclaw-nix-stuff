@@ -1,16 +1,15 @@
-{ nixpkgs ? import <nixpkgs> {} }:
+{ sources ? import nix/sources.nix }:
 
 let
-  pkgs = import <nixpkgs> {};
-  newpkgs = import pkgs.path { overlays = [ (pkgsself: pkgssuper: {
+  newpkgs = import sources.nixpkgs { overlays = [ (nixpkgs: pkgssuper: {
     # python27 = let
     #   packageOverrides = self: super: {
     #     numpy = super.numpy_1_10;
     #   };
     # in pkgssuper.python27.override {inherit packageOverrides;};
-    inherit (import ./gf-core-overlay.nix {nixpkgs = pkgsself; }) gf;
-    gf-rgl = import ./build-gf-rgl.nix {nixpkgs = pkgsself; };
-    bnfc = import ./install-bnfc.nix {nixpkgs = pkgsself; };
+    inherit (import ./gf-core-overlay.nix {inherit nixpkgs sources; }) gf;
+    gf-rgl = import ./build-gf-rgl.nix {inherit nixpkgs ; };
+    bnfc = import ./install-bnfc.nix {inherit nixpkgs ; };
   } ) ]; };
 in
   {

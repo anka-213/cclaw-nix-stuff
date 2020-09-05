@@ -7,8 +7,7 @@ stdenv.mkDerivation {
   # doc requirements: [graphviz-nox]
   src = fetchTarball {
     url = "https://github.com/GrammaticalFramework/gf-rgl/archive/master.tar.gz";
-    # sha256 = "12jxqvdjj8zhafz92c05pd96k1wa8z9dvgkjaxxvb20kmk1gq0xm";
-    sha256 = null;
+    sha256 = "12jxqvdjj8zhafz92c05pd96k1wa8z9dvgkjaxxvb20kmk1gq0xm";
   };
   buildPhase = ''
     runghc Setup.hs build

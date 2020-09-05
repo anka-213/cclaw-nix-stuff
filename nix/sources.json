@@ -1,4 +1,16 @@
 {
+    "gf-core": {
+        "branch": "nix-support",
+        "description": "Grammatical Framework core: compiler, shell & runtimes",
+        "homepage": "http://www.grammaticalframework.org/",
+        "owner": "anka-213",
+        "repo": "gf-core",
+        "rev": "cd39806951a00e93e2d20c71b0d3d5a87c80213e",
+        "sha256": "010lwwlwixdp6j8g609wwh91ff55qs9gpyrvxfldi5wv8rjmq2pq",
+        "type": "tarball",
+        "url": "https://github.com/anka-213/gf-core/archive/cd39806951a00e93e2d20c71b0d3d5a87c80213e.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "niv": {
         "branch": "master",
         "description": "Easy dependency management for Nix projects",
