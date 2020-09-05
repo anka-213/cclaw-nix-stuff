@@ -11,6 +11,18 @@
         "url": "https://github.com/anka-213/gf-core/archive/cd39806951a00e93e2d20c71b0d3d5a87c80213e.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "gf-rgl": {
+        "branch": "master",
+        "description": "Grammatical Framework's Resource Grammar Library (RGL)",
+        "homepage": "http://www.grammaticalframework.org/",
+        "owner": "GrammaticalFramework",
+        "repo": "gf-rgl",
+        "rev": "a06732a064069462d34a806fcf44ca138c51b21d",
+        "sha256": "07y2njhl09lvk3lmrwrv3ib7afpb3jaddpqv3n1r6wc7dn6i487n",
+        "type": "tarball",
+        "url": "https://github.com/GrammaticalFramework/gf-rgl/archive/a06732a064069462d34a806fcf44ca138c51b21d.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "niv": {
         "branch": "master",
         "description": "Easy dependency management for Nix projects",

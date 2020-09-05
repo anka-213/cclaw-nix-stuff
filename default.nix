@@ -8,7 +8,8 @@ let
     #   };
     # in pkgssuper.python27.override {inherit packageOverrides;};
     inherit (import ./gf-core-overlay.nix {inherit nixpkgs sources; }) gf;
-    gf-rgl = import ./build-gf-rgl.nix {inherit nixpkgs ; };
+    # gf-rgl = import ./build-gf-rgl.nix {inherit nixpkgs ; };
+    gf-rgl = nixpkgs.callPackage ./gf-rgl.nix { inherit sources; };
     bnfc = import ./install-bnfc.nix {inherit nixpkgs ; };
   } ) ]; };
 in

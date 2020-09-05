@@ -1,14 +1,11 @@
-{ stdenv, ghc, gf }:
+{ sources, stdenv, ghc, gf }:
 
 stdenv.mkDerivation {
   name = "gf-rgl";
   # src = ./.;
   buildInputs = [ghc gf];
   # doc requirements: [graphviz-nox]
-  src = fetchTarball {
-    url = "https://github.com/GrammaticalFramework/gf-rgl/archive/master.tar.gz";
-    sha256 = "12jxqvdjj8zhafz92c05pd96k1wa8z9dvgkjaxxvb20kmk1gq0xm";
-  };
+  src = sources.gf-rgl;
   buildPhase = ''
     runghc Setup.hs build
   '';
