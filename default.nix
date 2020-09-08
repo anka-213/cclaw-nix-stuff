@@ -10,7 +10,7 @@ let
     inherit (import ./gf-core-overlay.nix {inherit nixpkgs sources; }) gf;
     # gf-rgl = import ./build-gf-rgl.nix {inherit nixpkgs ; };
     gf-rgl = nixpkgs.callPackage ./gf-rgl.nix { inherit sources; };
-    bnfc = import ./install-bnfc.nix {inherit nixpkgs ; };
+    bnfc = nixpkgs.haskellPackages.callCabal2nix "bnfc" (sources.bnfc + "/source") {};
   } ) ]; };
 in
   {

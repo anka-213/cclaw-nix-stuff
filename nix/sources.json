@@ -1,4 +1,16 @@
 {
+    "bnfc": {
+        "branch": "master",
+        "description": "BNF Converter",
+        "homepage": "http://bnfc.digitalgrammars.com/",
+        "owner": "BNFC",
+        "repo": "bnfc",
+        "rev": "dc47f86754adce388245ae97f252e8b5820ab006",
+        "sha256": "0gkg2lqd3bln518wvsfv7gza44p6j2jrpnwy75pmzkwmkspd5y60",
+        "type": "tarball",
+        "url": "https://github.com/BNFC/bnfc/archive/dc47f86754adce388245ae97f252e8b5820ab006.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "gf-core": {
         "branch": "nix-support",
         "description": "Grammatical Framework core: compiler, shell & runtimes",
