@@ -2,12 +2,7 @@
 
 let
   newpkgs = import sources.nixpkgs { overlays = [ (nixpkgs: pkgssuper: {
-    # python27 = let
-    #   packageOverrides = self: super: {
-    #     numpy = super.numpy_1_10;
-    #   };
-    # in pkgssuper.python27.override {inherit packageOverrides;};
-    inherit (import ./gf-core-overlay.nix {inherit nixpkgs sources; }) gf;
+    inherit (import ./gf-core.nix {inherit nixpkgs sources; }) gf;
     # gf-rgl = import ./build-gf-rgl.nix {inherit nixpkgs ; };
     gf-rgl = nixpkgs.callPackage ./gf-rgl.nix { inherit sources; };
     bnfc = nixpkgs.haskellPackages.callCabal2nix "bnfc" (sources.bnfc + "/source") {};

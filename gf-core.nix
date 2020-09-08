@@ -1,6 +1,6 @@
-{ sources }:
+{ nixpkgs, sources }:
     let
-    onlyBin = pkg: sources.nixpkgs.buildEnv {
+    onlyBin = pkg: nixpkgs.buildEnv {
       name = "${pkg.name}";
       paths = [pkg];
       pathsToLink = [ "/bin" "/share" ];
