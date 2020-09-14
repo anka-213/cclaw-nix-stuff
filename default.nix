@@ -9,7 +9,7 @@ let
   } ) ]; };
 in
   {
-    inherit (newpkgs) gf bnfc;
+    inherit (newpkgs) gf;
     # inherit (newpkgs) gf gf-rgl bnfc;
   }
 
