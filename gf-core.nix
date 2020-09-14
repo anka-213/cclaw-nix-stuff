@@ -8,6 +8,6 @@
     gf-core = sources.gf-core;
     in
     {
-      gf = onlyBin (import gf-core { });
+      gf = onlyBin (import gf-core { inherit nixpkgs; });
 
     }
