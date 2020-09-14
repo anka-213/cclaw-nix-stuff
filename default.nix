@@ -9,7 +9,8 @@ let
   } ) ]; };
 in
   {
-    inherit (newpkgs) gf gf-rgl bnfc;
+    inherit (newpkgs) gf bnfc;
+    # inherit (newpkgs) gf gf-rgl bnfc;
   }
 
 # # Todo: use some better overlay pattern instead
