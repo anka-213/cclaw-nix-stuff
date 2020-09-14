@@ -17,10 +17,10 @@
         "homepage": "http://www.grammaticalframework.org/",
         "owner": "anka-213",
         "repo": "gf-core",
-        "rev": "651fbae02eb41035b5b31f8c8ffd5fb1434a6d3e",
-        "sha256": "032cbkxn868fylqbr401iz3nsd1m4y3383p9prvd977qr7i8ib1g",
+        "rev": "f69a51957dc74f7acf4ff0992229657bdbf8ef67",
+        "sha256": "14dznmdg327xdkjd719wipwgzrc962a33d8pp60af6ngvbqr749b",
         "type": "tarball",
-        "url": "https://github.com/anka-213/gf-core/archive/651fbae02eb41035b5b31f8c8ffd5fb1434a6d3e.tar.gz",
+        "url": "https://github.com/anka-213/gf-core/archive/f69a51957dc74f7acf4ff0992229657bdbf8ef67.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "gf-rgl": {
