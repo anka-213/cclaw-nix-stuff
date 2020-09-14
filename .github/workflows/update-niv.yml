@@ -16,7 +16,7 @@ jobs:
     - run: GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} nix-shell --run "niv update"
     - uses: cachix/cachix-action@v6
       with:
-        name: nix-getting-started-template
+        name: cclaw
         signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
         # Only needed for private caches
         #authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
