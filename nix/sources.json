@@ -17,10 +17,10 @@
         "homepage": "http://www.grammaticalframework.org/",
         "owner": "anka-213",
         "repo": "gf-core",
-        "rev": "cd39806951a00e93e2d20c71b0d3d5a87c80213e",
-        "sha256": "010lwwlwixdp6j8g609wwh91ff55qs9gpyrvxfldi5wv8rjmq2pq",
+        "rev": "651fbae02eb41035b5b31f8c8ffd5fb1434a6d3e",
+        "sha256": "032cbkxn868fylqbr401iz3nsd1m4y3383p9prvd977qr7i8ib1g",
         "type": "tarball",
-        "url": "https://github.com/anka-213/gf-core/archive/cd39806951a00e93e2d20c71b0d3d5a87c80213e.tar.gz",
+        "url": "https://github.com/anka-213/gf-core/archive/651fbae02eb41035b5b31f8c8ffd5fb1434a6d3e.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "gf-rgl": {
@@ -29,37 +29,13 @@
         "homepage": "http://www.grammaticalframework.org/",
         "owner": "GrammaticalFramework",
         "repo": "gf-rgl",
-        "rev": "a06732a064069462d34a806fcf44ca138c51b21d",
-        "sha256": "07y2njhl09lvk3lmrwrv3ib7afpb3jaddpqv3n1r6wc7dn6i487n",
+        "rev": "b422417d4b472bd3634a87b315a9cd00842de73e",
+        "sha256": "0ykm05v201av6dls54f3mzp72lf8jchcxr68chx5w0xy5bvya8rs",
         "type": "tarball",
-        "url": "https://github.com/GrammaticalFramework/gf-rgl/archive/a06732a064069462d34a806fcf44ca138c51b21d.tar.gz",
+        "url": "https://github.com/GrammaticalFramework/gf-rgl/archive/b422417d4b472bd3634a87b315a9cd00842de73e.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "niv": {
-        "branch": "master",
-        "description": "Easy dependency management for Nix projects",
-        "homepage": "https://github.com/nmattia/niv",
-        "owner": "nmattia",
-        "repo": "niv",
-        "rev": "fad2a6cbfb2e7cdebb7cb0ad2f5cc91e2c9bc06b",
-        "sha256": "0mghc1j0rd15spdjx81bayjqr0khc062cs25y5dcfzlxk4ynyc6m",
-        "type": "tarball",
-        "url": "https://github.com/nmattia/niv/archive/fad2a6cbfb2e7cdebb7cb0ad2f5cc91e2c9bc06b.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
-    "nixpkgs": {
-        "branch": "nixos-19.09",
-        "description": "A read-only mirror of NixOS/nixpkgs tracking the released channels. Send issues and PRs to",
-        "homepage": "https://github.com/NixOS/nixpkgs",
-        "owner": "NixOS",
-        "repo": "nixpkgs-channels",
-        "rev": "289466dd6a11c65a7de4a954d6ebf66c1ad07652",
-        "sha256": "0r5ja052s86fr54fm1zlhld3fwawz2w1d1gd6vbvpjrpjfyajibn",
-        "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs-channels/archive/289466dd6a11c65a7de4a954d6ebf66c1ad07652.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
-   "gitignore.nix": {
+    "gitignore.nix": {
         "branch": "master",
         "description": "Nix function for filtering local git sources",
         "homepage": "",
@@ -69,6 +45,30 @@
         "sha256": "1npnx0h6bd0d7ql93ka7azhj40zgjp815fw2r6smg8ch9p7mzdlx",
         "type": "tarball",
         "url": "https://github.com/hercules-ci/gitignore.nix/archive/c4662e662462e7bf3c2a968483478a665d00e717.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "niv": {
+        "branch": "master",
+        "description": "Easy dependency management for Nix projects",
+        "homepage": "https://github.com/nmattia/niv",
+        "owner": "nmattia",
+        "repo": "niv",
+        "rev": "dd13098d01eaa6be68237e7e38f96782b0480755",
+        "sha256": "1cfjdbsn0219fjzam1k7nqzkz8fb1ypab50rhyj026qbklqq2kvq",
+        "type": "tarball",
+        "url": "https://github.com/nmattia/niv/archive/dd13098d01eaa6be68237e7e38f96782b0480755.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nixpkgs": {
+        "branch": "nixos-20.09",
+        "description": "A read-only mirror of NixOS/nixpkgs tracking the released channels. Send issues and PRs to",
+        "homepage": "https://github.com/NixOS/nixpkgs",
+        "owner": "NixOS",
+        "repo": "nixpkgs-channels",
+        "rev": "e0508c81809b12013bce95562d556b1e672e3541",
+        "sha256": "0y4p9rbyc5zmzfcpjmhbbhpxrp808wcnp2100fvgc0nyvkyl112b",
+        "type": "tarball",
+        "url": "https://github.com/NixOS/nixpkgs-channels/archive/e0508c81809b12013bce95562d556b1e672e3541.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "pre-commit-hooks.nix": {
