@@ -29,10 +29,10 @@
         "homepage": "http://www.grammaticalframework.org/",
         "owner": "GrammaticalFramework",
         "repo": "gf-rgl",
-        "rev": "b422417d4b472bd3634a87b315a9cd00842de73e",
-        "sha256": "0ykm05v201av6dls54f3mzp72lf8jchcxr68chx5w0xy5bvya8rs",
+        "rev": "39b99180602c9fa04389073bb8b1af90302b5943",
+        "sha256": "0lp1a7w77nxyj48cklnmjfpz2n4nijkawfyclqhhf38xwqjwmlc8",
         "type": "tarball",
-        "url": "https://github.com/GrammaticalFramework/gf-rgl/archive/b422417d4b472bd3634a87b315a9cd00842de73e.tar.gz",
+        "url": "https://github.com/GrammaticalFramework/gf-rgl/archive/39b99180602c9fa04389073bb8b1af90302b5943.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "gitignore.nix": {
@@ -53,10 +53,10 @@
         "homepage": "https://github.com/nmattia/niv",
         "owner": "nmattia",
         "repo": "niv",
-        "rev": "dd13098d01eaa6be68237e7e38f96782b0480755",
-        "sha256": "1cfjdbsn0219fjzam1k7nqzkz8fb1ypab50rhyj026qbklqq2kvq",
+        "rev": "29ddaaf4e099c3ac0647f5b652469dfc79cd3b53",
+        "sha256": "1va6myp07gkspgxfch8z3rs9nyvys6jmgzkys6a2c4j09qxp1bs0",
         "type": "tarball",
-        "url": "https://github.com/nmattia/niv/archive/dd13098d01eaa6be68237e7e38f96782b0480755.tar.gz",
+        "url": "https://github.com/nmattia/niv/archive/29ddaaf4e099c3ac0647f5b652469dfc79cd3b53.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixpkgs": {
