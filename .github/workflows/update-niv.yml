@@ -4,8 +4,6 @@ on:
   schedule:
     # every day at 5am UTC
     - cron: '0 5 * * *'
-  pull_request:
-  push:
 
 jobs:
   update-dependencies:
