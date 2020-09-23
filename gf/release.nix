@@ -1,7 +1,7 @@
 let
   myOverlay = import ./overlay.nix;
 
-  pkgs = import <nixpkgs> { overlays = [ myOverlay ]; };
+  pkgs = import <nixpkgs> { overlays = [ (myOverlay {}) ]; };
   # in pkgs.haskellPackages.gf-core
   # in pkgs.asdfasdf
 in

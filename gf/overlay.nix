@@ -22,12 +22,16 @@ pkgs: oldpkgs: {
         );
         # gf-core = haskellPackagesNew.callPackage ./gf-core-c.nix {};
         # gf-c-bindings = haskellPackagesNew.callPackage ./haskell-bind.nix {};
-        gf-c-bindings = overrideCabal (haskellPackagesNew.callPackage ./haskell-bind.nix { gu = null; pgf = null; }) (
-          _old: {
-            librarySystemDepends = [ pkgs.gf-pgf ];
-          }
-        );
+        gf-c-bindings = overrideCabal (
+          haskellPackagesNew.callCabal2nix "pgf2" (sources.gf-core + "/src/runtime/haskell-bind")
+            { gu = null; pgf = null; }
+        )
+          (
+            _old: {
+              librarySystemDepends = [ pkgs.gf-pgf ];
+            }
+          );
       };
   };
-  gf-pgf = pkgs.callPackage ./c-runtime.nix {};
+  gf-pgf = pkgs.callPackage ./c-runtime.nix { inherit (sources) gf-core; };
 }

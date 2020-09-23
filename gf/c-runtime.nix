@@ -1,7 +1,7 @@
-{ stdenv, autoreconfHook }:
+{ gf-core, stdenv, autoreconfHook }:
 stdenv.mkDerivation {
   name = "gf-c-runtime-0.0.1";
-  src = ../src/runtime/c;
+  src = gf-core + "/src/runtime/c";
   nativeBuildInputs = [ autoreconfHook ];
   # src = fetchurl {
   #   url = http://example.org/libfoo-1.2.3.tar.bz2;
