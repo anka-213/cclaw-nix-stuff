@@ -21,7 +21,12 @@ let
   };
 in
 {
-  inherit (newpkgs) gf gf-rgl bnfc gf-pgf gf-with-rgl gf-wordnet;
+  # inherit (newpkgs) gf gf-rgl bnfc gf-pgf gf-with-rgl gf-wordnet;
+  cclawStuff = {
+    inherit (newpkgs) bnfc gf-pgf gf-with-rgl;
+  };
+  pkgs = newpkgs.dontRecurseIntoAttrs newpkgs;
+  inherit sources;
 }
 
 # # Todo: use some better overlay pattern instead
