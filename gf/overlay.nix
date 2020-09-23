@@ -1,13 +1,13 @@
-{ sources ? import nix/sources.nix }:
+{ sources ? import ../nix/sources.nix }:
 pkgs: oldpkgs: {
   haskellPackages = oldpkgs.haskellPackages.override {
-    overrides = haskellPackagesNew: haskellPackagesOld:
+    overrides = haskellPackagesNew: _haskellPackagesOld:
       with oldpkgs.haskell.lib;
       {
         # site = haskellPackagesNew.callPackage ./site.nix {};
         # gf-core = overrideCabal (haskellPackagesNew.callPackage ./gf-core.nix {}) (old: {
         gf-core = overrideCabal (haskellPackagesNew.callCabal2nix "gf" sources.gf-core {}) (
-          old: {
+          _old: {
             # Fix utf8 encoding problems
             # patches = [(
             #   oldpkgs.fetchpatch {
@@ -23,7 +23,7 @@ pkgs: oldpkgs: {
         # gf-core = haskellPackagesNew.callPackage ./gf-core-c.nix {};
         # gf-c-bindings = haskellPackagesNew.callPackage ./haskell-bind.nix {};
         gf-c-bindings = overrideCabal (haskellPackagesNew.callPackage ./haskell-bind.nix { gu = null; pgf = null; }) (
-          old: {
+          _old: {
             librarySystemDepends = [ pkgs.gf-pgf ];
           }
         );
