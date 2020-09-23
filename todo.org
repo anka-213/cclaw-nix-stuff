@@ -1,0 +1,17 @@
+* cfg commit
+
+* Use the callCabal2nix for gf-core
+
+* Fix rgl utf-8
+
+* Make rgl wrapper
+
+GF_LIB_PATH
+
+.:/usr/local/share/gf:/usr/local/share/gf-rgl/src:/usr/local/share/gf-rgl/src/english
+
+* Ask about overlays - DONE
+
+* Try other versions of nixpkgs
+
+* Make overlay for haskell c-bindings
