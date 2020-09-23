@@ -13,13 +13,14 @@ let
           bnfc = pkgssuper.haskell.lib.justStaticExecutables (
             nixpkgs.haskellPackages.callCabal2nix "bnfc" (sources.bnfc + "/source") {}
           );
+          gf-with-rgl = nixpkgs.callPackage ./gf-with-rgl.nix {};
         }
       )
     ];
   };
 in
 {
-  inherit (newpkgs) gf gf-rgl bnfc gf-pgf;
+  inherit (newpkgs) gf gf-rgl bnfc gf-pgf gf-with-rgl;
 }
 
 # # Todo: use some better overlay pattern instead
