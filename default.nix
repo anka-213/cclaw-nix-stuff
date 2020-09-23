@@ -3,10 +3,11 @@
 let
   newpkgs = import sources.nixpkgs {
     overlays = [
+      (import gf/overlay.nix { inherit sources; })
       (
         nixpkgs: pkgssuper: {
           # inherit (import ./gf-core.nix {inherit nixpkgs sources; }) gf;
-          gf = pkgssuper.haskell.lib.justStaticExecutables (import sources.gf-core { inherit nixpkgs; });
+          gf = pkgssuper.haskell.lib.justStaticExecutables (nixpkgs.haskellPackages.gf-core);
           # gf-rgl = import ./build-gf-rgl.nix {inherit nixpkgs ; };
           gf-rgl = nixpkgs.callPackage ./gf-rgl.nix { inherit sources; };
           bnfc = pkgssuper.haskell.lib.justStaticExecutables (
@@ -18,7 +19,7 @@ let
   };
 in
 {
-  inherit (newpkgs) gf gf-rgl bnfc;
+  inherit (newpkgs) gf gf-rgl bnfc gf-pgf;
 }
 
 # # Todo: use some better overlay pattern instead
