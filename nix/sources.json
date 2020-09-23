@@ -12,15 +12,15 @@
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "gf-core": {
-        "branch": "nix-support",
+        "branch": "master",
         "description": "Grammatical Framework core: compiler, shell & runtimes",
         "homepage": "http://www.grammaticalframework.org/",
-        "owner": "anka-213",
+        "owner": "GrammaticalFramework",
         "repo": "gf-core",
-        "rev": "9b0f8de37d8eaca3b3c258923a51b5236ca92535",
-        "sha256": "0aykwk17j1r5f5nlqbk9n638l9p7zzqfp27p9cqrm1rs98flg4i4",
+        "rev": "d95b3efd6bdea90cc37be5179527a2791b2b7717",
+        "sha256": "12mhwjm9a0c708jy7r7djys6ag7baffifbs0cs3i7kqfw0qhc3vw",
         "type": "tarball",
-        "url": "https://github.com/anka-213/gf-core/archive/9b0f8de37d8eaca3b3c258923a51b5236ca92535.tar.gz",
+        "url": "https://github.com/GrammaticalFramework/gf-core/archive/d95b3efd6bdea90cc37be5179527a2791b2b7717.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "gf-rgl": {
