@@ -1,5 +1,10 @@
 # A bunch of nix packages
 
+Everything is prebuilt on both macos and linux. To use precompiled packages:
+```
+cachix use cclaw
+```
+
 Install everything with
 
 ```
