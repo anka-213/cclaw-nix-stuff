@@ -10,6 +10,7 @@ let
           gf = pkgssuper.haskell.lib.justStaticExecutables (nixpkgs.haskellPackages.gf-core);
           # gf-rgl = import ./build-gf-rgl.nix {inherit nixpkgs ; };
           gf-rgl = nixpkgs.callPackage ./gf-rgl.nix { inherit sources; };
+          gf-wordnet = nixpkgs.callPackage ./gf-wordnet.nix { src = sources.gf-wordnet; };
           bnfc = pkgssuper.haskell.lib.justStaticExecutables (
             nixpkgs.haskellPackages.callCabal2nix "bnfc" (sources.bnfc + "/source") {}
           );
@@ -20,7 +21,7 @@ let
   };
 in
 {
-  inherit (newpkgs) gf gf-rgl bnfc gf-pgf gf-with-rgl;
+  inherit (newpkgs) gf gf-rgl bnfc gf-pgf gf-with-rgl gf-wordnet;
 }
 
 # # Todo: use some better overlay pattern instead

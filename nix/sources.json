@@ -35,6 +35,18 @@
         "url": "https://github.com/GrammaticalFramework/gf-rgl/archive/39b99180602c9fa04389073bb8b1af90302b5943.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "gf-wordnet": {
+        "branch": "master",
+        "description": "A WordNet in GF",
+        "homepage": "https://cloud.grammaticalframework.org/wordnet/",
+        "owner": "GrammaticalFramework",
+        "repo": "gf-wordnet",
+        "rev": "63a60bc15b314635f48e149ddf9a54e708eb1a7f",
+        "sha256": "1hc4rpy1mwjppzirv9c372q9fim210qbv80nvqhn6j8k0ijmi9fi",
+        "type": "tarball",
+        "url": "https://github.com/GrammaticalFramework/gf-wordnet/archive/63a60bc15b314635f48e149ddf9a54e708eb1a7f.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "gitignore.nix": {
         "branch": "master",
         "description": "Nix function for filtering local git sources",
