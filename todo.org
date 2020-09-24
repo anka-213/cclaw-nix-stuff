@@ -15,3 +15,15 @@ GF_LIB_PATH
 * Try other versions of nixpkgs
 
 * Make overlay for haskell c-bindings
+
+
+* Use this:
+https://github.com/mic92/nix-build-uncached
+
+
+* Jo Hsi
+
+One useful tool when working with folds is to look at which arguments we can give to a function so it doesn’t change the value (called “identity element” in maths). These are often the right choice as the base case.
+For example, the function (&&) has True as identity element, since
+True && x == x
+x && True == x

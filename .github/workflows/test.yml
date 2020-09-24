@@ -8,7 +8,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2.3.2
     - uses: cachix/install-nix-action@v10
-      with: 
+      with:
         skip_adding_nixpkgs_channel: true
     - uses: cachix/cachix-action@v6
       with:
@@ -17,5 +17,5 @@ jobs:
         # Only needed for private caches
         #authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
     - run: for f in $(nix-instantiate); do echo $f; cat $f; done
-    - run: nix-build
+    - run: nix-build -A cclawStuff
     # - run: nix-shell --run "echo OK"
