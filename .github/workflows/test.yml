@@ -16,6 +16,11 @@ jobs:
         signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
         # Only needed for private caches
         #authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-    - run: for f in $(nix-instantiate); do echo $f; cat $f; done
-    - run: nix-build -A cclawStuff
+
+    - name: Show nixpkgs version
+      run: nix-instantiate --eval -E '(import <nixpkgs> {}).lib.version'
+    # - run: for f in $(nix-instantiate); do echo $f; cat $f; done
+    # - run: nix-build -A cclawStuff
+    - name: Build nix packages
+      run: nix run -f . nix-build-uncached -c nix-build-uncached default.nix -A cclawStuff
     # - run: nix-shell --run "echo OK"
