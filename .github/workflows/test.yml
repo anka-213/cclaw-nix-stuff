@@ -20,5 +20,5 @@ jobs:
     # - run: for f in $(nix-instantiate); do echo $f; cat $f; done
     # - run: nix-build -A cclawStuff
     - name: Build nix packages
-      run: nix run -f . nix-build-uncached -c nix-build-uncached default.nix -A cclawStuff
+      run: nix run -f . pkgs.nix-build-uncached -c nix-build-uncached default.nix -A cclawStuff
     # - run: nix-shell --run "echo OK"
