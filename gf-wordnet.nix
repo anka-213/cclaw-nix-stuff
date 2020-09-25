@@ -1,6 +1,6 @@
-{ src, stdenv, gf, gf-rgl, ninja }:
+{ src, stdenvNoCC, gf, gf-rgl, ninja }:
 
-stdenv.mkDerivation {
+stdenvNoCC.mkDerivation {
   name = "gf-wordnet";
   inherit src;
   buildInputs = [ ninja ];
