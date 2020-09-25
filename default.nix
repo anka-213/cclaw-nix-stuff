@@ -23,7 +23,7 @@ in
 {
   # inherit (newpkgs) gf gf-rgl bnfc gf-pgf gf-with-rgl gf-wordnet;
   cclawStuff = {
-    inherit (newpkgs) bnfc gf-pgf gf-with-rgl;
+    inherit (newpkgs) bnfc gf-pgf gf-with-rgl gf-wordnet;
   };
   pkgs = newpkgs.dontRecurseIntoAttrs newpkgs;
   inherit sources;
