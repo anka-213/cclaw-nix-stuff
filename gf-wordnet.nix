@@ -1,42 +1,37 @@
-{ src, stdenv, ghc, gf, gf-rgl, gf-pgf }:
+{ src, stdenv, gf, gf-rgl, ninja }:
 
 stdenv.mkDerivation {
   name = "gf-wordnet";
-  enableParallelBuildings = true;
-  # src = ./.;
-  buildInputs = [ ghc gf gf-pgf ];
   inherit src;
-  preBuild = ''
-    mkdir $out
-    for f in ${gf-rgl}/rgl/*; do
-      # TODO: This is a hack. We shouldn't put rgl in our out
-      ln -s $f $out/
-      # ln -s $f ./
-    done
-    export GF_LIB_PATH=$out
+  buildInputs = [ ninja ];
+  GF_LIB_PATH = "${gf-rgl}/rgl";
+
+  my_ninjaHeader = ''
+    build_dir = build/gfo
+    gf_flags = --batch --quiet --gfo-dir=$build_dir
+
+    rule gf
+      command = ${gf}/bin/gf $gf_flags $in
+
+    build $build_dir/WordNet.gfo: gf WordNet.gf
   '';
-  # buildPhase = ''
-  #   runghc Setup.hs build
-  # '';
-  # installPhase = ''
-  #   mkdir -p $out/rgl
-  #   runghc Setup.hs copy --dest=$out/rgl
-  # '';
+
+  # gf_flags = --batch --quiet --gf-lib-path=${gf-rgl}/rgl --gfo-dir=$build_dir
+  preBuild = ''
+    echo "$my_ninjaHeader" > build.ninja
+
+    for lang in Eng Swe Spa Chi; do
+      echo "build \$build_dir/WordNet$lang.gfo: gf WordNet$lang.gf \$build_dir/WordNet.gfo" >> build.ninja
+    done
+
+    cat build.ninja
+
+  '';
+
+  installPhase = ''
+    mkdir $out
+    mv build/gfo/WordNet*.gfo $out/
+  '';
+
 
 }
-# RUNMAKE=runghc Setup.hs
-
-# .PHONY: build copy install doc clean
-
-# default: build copy
-
-# build: src/*/*.gf
-#   $(RUNMAKE) build
-
-# copy:
-#   $(RUNMAKE) copy
-
-# install: build copy
-
-# doc: build
-#   make -C doc GF_LIB_PATH=../dist
