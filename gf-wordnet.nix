@@ -23,15 +23,10 @@ stdenv.mkDerivation {
     for lang in Eng Swe Spa Chi; do
       echo "build \$build_dir/WordNet$lang.gfo: gf WordNet$lang.gf \$build_dir/WordNet.gfo" >> build.ninja
     done
-
-    cat build.ninja
-
   '';
 
   installPhase = ''
     mkdir $out
     mv build/gfo/WordNet*.gfo $out/
   '';
-
-
 }
