@@ -25,7 +25,7 @@ in
       hooks = {
         shellcheck.enable = true;
         nixpkgs-fmt.enable = true;
-        nix-linter.enable = true;
+        nix-linter.enable = false; # Brings a full ghc installation with it
       };
       # generated files
       excludes = [ "^nix/sources\.nix$" ];
