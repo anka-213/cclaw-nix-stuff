@@ -22,7 +22,7 @@ let
 in
 {
   # inherit (newpkgs) gf gf-rgl bnfc gf-pgf gf-with-rgl gf-wordnet;
-  cclawStuff = {
+  cclawStuff = newpkgs.recurseIntoAttrs {
     inherit (newpkgs) bnfc gf-pgf gf-with-rgl gf-wordnet;
   };
   pkgs = newpkgs.dontRecurseIntoAttrs newpkgs;
