@@ -1,5 +1,14 @@
 # A bunch of nix packages
 
+First install nix, with
+```
+sh <(curl -L https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume
+```
+Next, install cachix, with
+```
+nix-env -f '<nixpkgs>' -iA cachix
+```
+
 Everything is prebuilt on both macos and linux. To use precompiled packages:
 ```
 cachix use cclaw
