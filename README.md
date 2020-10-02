@@ -11,7 +11,7 @@ nix-env -f '<nixpkgs>' -iA cachix
 
 Everything is prebuilt on both macos and linux. To use precompiled packages:
 ```
-cachix use cclaw
+sudo cachix use cclaw
 ```
 
 Install everything with
