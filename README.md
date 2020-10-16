@@ -4,6 +4,12 @@ First install nix, with
 ```
 sh <(curl -L https://nixos.org/nix/install) --darwin-use-unencrypted-nix-store-volume
 ```
+
+Load the new environment with
+```
+. ~/.nix-profile/etc/profile.d/nix.sh
+```
+
 Next, install cachix, with
 ```
 nix-env -f '<nixpkgs>' -iA cachix
