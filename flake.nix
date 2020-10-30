@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "A flake for GrammaticalFramework (and bnfc)";
 
   # inputs.gf-overlay.url = "./gf/flake-overlay.nix";
   inputs = {
@@ -20,33 +20,47 @@
 
   outputs = { self, nixpkgs, bnfc, gf-core, gf-rgl, gf-wordnet }:
     let
-      sources = { inherit bnfc gf-core gf-rgl gf-wordnet; };
-      overlay = import gf/overlay.nix { inherit sources; };
+      systems = [ "x86_64-linux" "x86_64-darwin" ];
+      forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f system);
 
-      pkgs1 = import nixpkgs { overlays = [ overlay ]; };
+      # Memoize nixpkgs for different platforms for efficiency.
+      nixpkgsFor = forAllSystems (system:
+        import nixpkgs {
+          inherit system;
+          overlays = self.overlays;
+        }
+      );
+
+      sources = { inherit bnfc gf-core gf-rgl gf-wordnet; };
+      gf-overlay = import gf/overlay.nix { inherit sources; };
+
+      my-overlay = final: prev:
+        let
+          inherit (prev.haskell.lib) justStaticExecutables;
+          # inherit (final.haskellPackages) justStaticExecutables;
+        in
+        {
+          bnfc = justStaticExecutables (
+            final.haskellPackages.callCabal2nix "bnfc" (sources.bnfc + "/source") { }
+          );
+          # inherit (import ./gf-core.nix {inherit nixpkgs sources; }) gf;
+          gf = justStaticExecutables (final.haskellPackages.gf-core);
+          # gf-rgl = import ./build-gf-rgl.nix {inherit final ; };
+          gf-rgl = final.callPackage ./gf-rgl.nix { inherit sources; };
+          gf-wordnet = final.callPackage ./gf-wordnet.nix { src = sources.gf-wordnet; };
+          gf-with-rgl = final.callPackage ./gf-with-rgl.nix { };
+        };
     in
     {
 
-      # packages.x86_64-linux.hello = nixpkgs.legacyPackages.x86_64-linux.hello;
-      # defaultPackage.x86_64-linux = self.packages.x86_64-linux.hello;
+      overlays = [
+        gf-overlay
+        my-overlay
+      ];
 
-      packages = builtins.mapAttrs
-        (_: pkgs:
-          let
-            my-gf = import gf/simple-overlay.nix { inherit pkgs sources; };
-            inherit (pkgs.haskell.lib) justStaticExecutables;
-            inherit (my-gf) haskellPackages gf-pgf;
-          in
-          rec {
-            bnfc = justStaticExecutables (
-              pkgs.haskellPackages.callCabal2nix "bnfc" (sources.bnfc + "/source") { }
-            );
-            gf = justStaticExecutables (haskellPackages.gf-core);
-            gf-rgl = pkgs.callPackage ./gf-rgl.nix { inherit sources; };
-            gf-wordnet = pkgs.callPackage ./gf-wordnet.nix { src = sources.gf-wordnet; };
-            gf-with-rgl = pkgs.callPackage ./gf-with-rgl.nix { };
-          })
-        nixpkgs.legacyPackages;
+      packages = forAllSystems (system: {
+        inherit (nixpkgsFor.${system}) gf-with-rgl bnfc;
+      });
 
       # defaultPackage = builtins.mapAttrs (_: pkgs: pkgs.lambda-launcher) self.packages;
 
