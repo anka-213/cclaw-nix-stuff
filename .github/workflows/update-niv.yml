@@ -15,7 +15,7 @@ jobs:
       with:
         skip_adding_nixpkgs_channel: true
     - run: GITHUB_PATH= nix-shell --run "niv update"
-    - uses: cachix/cachix-action@v6
+    - uses: cachix/cachix-action@v8
       with:
         name: cclaw
         signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
