@@ -1,6 +1,7 @@
-{ sources ? import nix/sources.nix }:
+{ source-overrides ? {} }:
 
 let
+  sources = import nix/sources.nix // source-overrides;
   newpkgs = import sources.nixpkgs {
     overlays = [
       (import gf/overlay.nix { inherit sources; })

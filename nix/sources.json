@@ -29,10 +29,10 @@
         "homepage": "http://www.grammaticalframework.org/",
         "owner": "GrammaticalFramework",
         "repo": "gf-rgl",
-        "rev": "272484b1fd8409eb5052e6f5456a9d8fd041af26",
-        "sha256": "0zajfm4kgkma9z728f7vgvmk79mynirm1m67xlvkd0yb7wjj6m5i",
+        "rev": "df4ba9eb969675319c18a87125925c4dd8807971",
+        "sha256": "055gvc2nfwa509klmfap358cgm1737wfwvxz78qzlh13nvqzy64s",
         "type": "tarball",
-        "url": "https://github.com/GrammaticalFramework/gf-rgl/archive/272484b1fd8409eb5052e6f5456a9d8fd041af26.tar.gz",
+        "url": "https://github.com/GrammaticalFramework/gf-rgl/archive/df4ba9eb969675319c18a87125925c4dd8807971.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "gf-wordnet": {

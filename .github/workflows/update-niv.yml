@@ -1,9 +1,9 @@
 name: Update niv
 
 on:
-  schedule:
-    # every day at 5am UTC
-    - cron: '0 5 * * *'
+  # schedule:
+  #   # every day at 5am UTC
+  #   - cron: '0 5 * * *'
   push: # For testing
 
 jobs:
@@ -11,11 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2.3.2
-    - uses: cachix/install-nix-action@v10
-      with: 
+    - uses: cachix/install-nix-action@v12
+      with:
         skip_adding_nixpkgs_channel: true
     - run: GITHUB_PATH= nix-shell --run "niv update"
-    - uses: cachix/cachix-action@v6
+    - uses: cachix/cachix-action@v8
       with:
         name: cclaw
         signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
