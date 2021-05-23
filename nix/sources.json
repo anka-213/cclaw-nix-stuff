@@ -5,10 +5,10 @@
         "homepage": "http://bnfc.digitalgrammars.com/",
         "owner": "BNFC",
         "repo": "bnfc",
-        "rev": "a4f98e01bb1416c7cab317f0fd76c7f5828d57aa",
-        "sha256": "0hi1p0rgv404m8mhaphkg1pprr6j6h1w8q3brvd4nrzacwm6j1xf",
+        "rev": "3bb050a426c6fbdc9d89b4c8217a648701681b6e",
+        "sha256": "16b00jp56i3bkhzjh0ljry23iirkgklclf0wyr3ids90vqkkisx1",
         "type": "tarball",
-        "url": "https://github.com/BNFC/bnfc/archive/a4f98e01bb1416c7cab317f0fd76c7f5828d57aa.tar.gz",
+        "url": "https://github.com/BNFC/bnfc/archive/3bb050a426c6fbdc9d89b4c8217a648701681b6e.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "gf-core": {
@@ -17,10 +17,10 @@
         "homepage": "http://www.grammaticalframework.org/",
         "owner": "GrammaticalFramework",
         "repo": "gf-core",
-        "rev": "670a58e7e724018de5624b75eeb39f04ffe12c98",
-        "sha256": "04b6wbifnjv5ww8dp9s488vxgkpy2sh3qb178z9dhz6g20q45kx2",
+        "rev": "eeda03e9b065ee74905b6d593aa88912c78ef8bb",
+        "sha256": "1g4b4rc8afpccdcvnls0qcd32621r3xgkw7idrp3ai7k29i7zlzz",
         "type": "tarball",
-        "url": "https://github.com/GrammaticalFramework/gf-core/archive/670a58e7e724018de5624b75eeb39f04ffe12c98.tar.gz",
+        "url": "https://github.com/GrammaticalFramework/gf-core/archive/eeda03e9b065ee74905b6d593aa88912c78ef8bb.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "gf-rgl": {
@@ -29,10 +29,10 @@
         "homepage": "http://www.grammaticalframework.org/",
         "owner": "GrammaticalFramework",
         "repo": "gf-rgl",
-        "rev": "df4ba9eb969675319c18a87125925c4dd8807971",
-        "sha256": "055gvc2nfwa509klmfap358cgm1737wfwvxz78qzlh13nvqzy64s",
+        "rev": "cc75637704da9b66b17aa4c11b426b51153f4b01",
+        "sha256": "1sgpy0lpya0cmfcyzhz2z0xqsln1nrghhxnbw6i66bsq5r5h0bsy",
         "type": "tarball",
-        "url": "https://github.com/GrammaticalFramework/gf-rgl/archive/df4ba9eb969675319c18a87125925c4dd8807971.tar.gz",
+        "url": "https://github.com/GrammaticalFramework/gf-rgl/archive/cc75637704da9b66b17aa4c11b426b51153f4b01.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "gf-wordnet": {
@@ -41,10 +41,10 @@
         "homepage": "https://cloud.grammaticalframework.org/wordnet/",
         "owner": "GrammaticalFramework",
         "repo": "gf-wordnet",
-        "rev": "4d79b6a37f248e7b9bfba18d89ce6d081447d054",
-        "sha256": "0lppmyx30jfb5y8nlz63l2ibxb058n4gkr2davncz8xrqnnzqz50",
+        "rev": "eee4a6f1cba03b10002c4b6cd3b5b33c78add374",
+        "sha256": "1ph43jdi1gfrmbhbf4vdajy3wlhh16mm2qa8w9ymwp41srbyspmx",
         "type": "tarball",
-        "url": "https://github.com/GrammaticalFramework/gf-wordnet/archive/4d79b6a37f248e7b9bfba18d89ce6d081447d054.tar.gz",
+        "url": "https://github.com/GrammaticalFramework/gf-wordnet/archive/eee4a6f1cba03b10002c4b6cd3b5b33c78add374.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "gitignore.nix": {
@@ -53,10 +53,10 @@
         "homepage": "",
         "owner": "hercules-ci",
         "repo": "gitignore.nix",
-        "rev": "c4662e662462e7bf3c2a968483478a665d00e717",
-        "sha256": "1npnx0h6bd0d7ql93ka7azhj40zgjp815fw2r6smg8ch9p7mzdlx",
+        "rev": "211907489e9f198594c0eb0ca9256a1949c9d412",
+        "sha256": "06j7wpvj54khw0z10fjyi31kpafkr6hi1k0di13k1xp8kywvfyx8",
         "type": "tarball",
-        "url": "https://github.com/hercules-ci/gitignore.nix/archive/c4662e662462e7bf3c2a968483478a665d00e717.tar.gz",
+        "url": "https://github.com/hercules-ci/gitignore.nix/archive/211907489e9f198594c0eb0ca9256a1949c9d412.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "niv": {
@@ -65,10 +65,10 @@
         "homepage": "https://github.com/nmattia/niv",
         "owner": "nmattia",
         "repo": "niv",
-        "rev": "9d35b9e4837ab88517210b1701127612c260eccf",
-        "sha256": "0q50xhnm8g2yfyakrh0nly4swyygxpi0a8cb9gp65wcakcgvzvdh",
+        "rev": "94080ae8286024820c570a2a24ed7c36d7ad04a9",
+        "sha256": "0wlk52zwlrq727x3z1vg9d9qq4zw62ab5jzg4068iqb6hyb0cr0w",
         "type": "tarball",
-        "url": "https://github.com/nmattia/niv/archive/9d35b9e4837ab88517210b1701127612c260eccf.tar.gz",
+        "url": "https://github.com/nmattia/niv/archive/94080ae8286024820c570a2a24ed7c36d7ad04a9.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixpkgs": {
@@ -77,10 +77,10 @@
         "homepage": "https://github.com/NixOS/nixpkgs",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "6899c10886354487cb0dbebc7a7cad0af59d2934",
-        "sha256": "1mw4gllphkmia2bw4ycffxm7gdnz7dckifvfjjchcmjakjm1gkpl",
+        "rev": "ac60476ed94fd5424d9f3410c438825f793a8cbb",
+        "sha256": "1dlvpdsy5v09c7rj5f7xgakyj722yqr4415davjpcmrk4n5kw76v",
         "type": "tarball",
-        "url": "https://github.com/NixOS/nixpkgs/archive/6899c10886354487cb0dbebc7a7cad0af59d2934.tar.gz",
+        "url": "https://github.com/NixOS/nixpkgs/archive/ac60476ed94fd5424d9f3410c438825f793a8cbb.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "pre-commit-hooks.nix": {
@@ -89,10 +89,10 @@
         "homepage": "",
         "owner": "cachix",
         "repo": "pre-commit-hooks.nix",
-        "rev": "4dd50ef441796b439a56f1e0f8b127d4129f8947",
-        "sha256": "1n1290h7sp7n2hsayi4isf61p9k7r3v0kva2hjilgmlx94i6l601",
+        "rev": "2e7fac06108b4fc81f5ff9ed9a02bc4f6ede7001",
+        "sha256": "17xlb7cb1n6cyw8my6ks4iacrz49a6wfqrdj2gvjc52qc91wxvj7",
         "type": "tarball",
-        "url": "https://github.com/cachix/pre-commit-hooks.nix/archive/4dd50ef441796b439a56f1e0f8b127d4129f8947.tar.gz",
+        "url": "https://github.com/cachix/pre-commit-hooks.nix/archive/2e7fac06108b4fc81f5ff9ed9a02bc4f6ede7001.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }
