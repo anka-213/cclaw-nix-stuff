@@ -54,11 +54,11 @@
     "gf-wordnet": {
       "flake": false,
       "locked": {
-        "lastModified": 1621623030,
-        "narHash": "sha256-vV7tV9aBXF594khhUasJEFI+vFRtE7fgqtm9EJscBN4=",
+        "lastModified": 1633415698,
+        "narHash": "sha256-A+vpYxsROXmRtklG995HuhU3e9O3Wxm51nj2j9G/nM8=",
         "owner": "GrammaticalFramework",
         "repo": "gf-wordnet",
-        "rev": "eee4a6f1cba03b10002c4b6cd3b5b33c78add374",
+        "rev": "82bdcf42f8407c6494085d1fdde3dbb28e1762f8",
         "type": "github"
       },
       "original": {
