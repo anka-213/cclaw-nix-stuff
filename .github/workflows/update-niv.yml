@@ -4,7 +4,9 @@ on:
   # schedule:
   #   # every day at 5am UTC
   #   - cron: '0 5 * * *'
-  push: # For testing
+  # push: # For testing
+  {} # Never: This is the flake branch
+  # Todo: Update the flake instead
 
 jobs:
   update-dependencies:
