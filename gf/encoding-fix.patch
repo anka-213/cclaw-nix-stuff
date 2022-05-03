@@ -16,7 +16,7 @@ index 7cde1ce97..0737a15cf 100644
  import System.Environment (getArgs)
  import System.Exit
 +import GHC.IO.Encoding
- import GF.System.Console (setConsoleEncoding)
+ -- import GF.System.Console (setConsoleEncoding)
  
  -- | Run the GF main program, taking arguments from the command line.
 @@ -23,6 +24,7 @@ import GF.System.Console (setConsoleEncoding)
@@ -24,6 +24,6 @@ index 7cde1ce97..0737a15cf 100644
  main :: IO ()
  main = do
 +  setLocaleEncoding utf8
-   --setConsoleEncoding
+   -- setConsoleEncoding
    uncurry mainOpts =<< getOptions
  
