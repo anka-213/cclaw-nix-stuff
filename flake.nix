@@ -3,7 +3,8 @@
 
   # inputs.gf-overlay.url = "./gf/flake-overlay.nix";
   inputs = {
-    nixpkgs.url = github:NixOS/nixpkgs/nixos-20.09;
+    # nixpkgs.url = github:NixOS/nixpkgs/nixos-20.09;
+    nixpkgs.url = "nixpkgs"; # = nixpkgs-unstable
     # nixpkgs.overlay = gf/overlay.nix;
     # nixpkgs.overlay = "gf/overlay.nix";
     bnfc.url = github:BNFC/bnfc/master;
