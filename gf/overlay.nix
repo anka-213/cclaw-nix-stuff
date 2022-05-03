@@ -1,6 +1,6 @@
-{ sources ? import ../nix/sources.nix }:
+{ sources ? import ../nix/sources.nix , ghc-version ? "ghc8107"}:
 final: prev: {
-  haskellPackages = prev.haskellPackages.override {
+  haskellPackages = prev.haskell.packages.${ghc-version}.override {
     overrides = haskellPackagesNew: _haskellPackagesOld:
       with prev.haskell.lib;
       {

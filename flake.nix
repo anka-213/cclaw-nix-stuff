@@ -32,9 +32,10 @@
           overlays = builtins.attrValues self.overlays;
         }
       );
+      ghc-version = "ghc8107";
 
       sources = { inherit bnfc gf-core gf-rgl gf-wordnet; };
-      gf-overlay = import gf/overlay.nix { inherit sources; };
+      gf-overlay = import gf/overlay.nix { inherit sources ghc-version; };
 
       my-overlay = final: prev:
         let
