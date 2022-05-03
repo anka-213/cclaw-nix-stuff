@@ -4,7 +4,7 @@ stdenvNoCC.mkDerivation {
   name = "gf-wordnet";
   inherit src;
   buildInputs = [ ninja ];
-  GF_LIB_PATH = "${gf-rgl}/rgl";
+  GF_LIB_PATH = "${gf-rgl}/share/gf/lib";
 
   my_ninjaHeader = ''
     build_dir = build/gfo
@@ -16,7 +16,7 @@ stdenvNoCC.mkDerivation {
     build $build_dir/WordNet.gfo: gf WordNet.gf
   '';
 
-  # gf_flags = --batch --quiet --gf-lib-path=${gf-rgl}/rgl --gfo-dir=$build_dir
+  # gf_flags = --batch --quiet --gf-lib-path=${gf-rgl}/share/gf/lib --gfo-dir=$build_dir
   preBuild = ''
     echo "$my_ninjaHeader" > build.ninja
 
@@ -26,7 +26,7 @@ stdenvNoCC.mkDerivation {
   '';
 
   installPhase = ''
-    mkdir $out
-    mv build/gfo/WordNet*.gfo $out/
+    mkdir -p $out/share/gf/lib
+    mv build/gfo/WordNet*.gfo $out/share/gf/lib
   '';
 }

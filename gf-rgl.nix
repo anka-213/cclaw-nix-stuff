@@ -12,8 +12,8 @@ stdenv.mkDerivation {
   '';
   installPhase = ''
     export LC_ALL="C.UTF-8"
-    mkdir -p $out/rgl
-    runghc Setup.hs copy --dest=$out/rgl
+    mkdir -p $out/share/gf/lib
+    runghc Setup.hs copy --dest=$out/share/gf/lib
   '';
 
 }
