@@ -21,13 +21,14 @@
   outputs = { self, nixpkgs, bnfc, gf-core, gf-rgl, gf-wordnet }:
     let
       systems = [ "x86_64-linux" "x86_64-darwin" ];
+      # systems = [ "x86_64-darwin" ];
       forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f system);
 
       # Memoize nixpkgs for different platforms for efficiency.
       nixpkgsFor = forAllSystems (system:
         import nixpkgs {
           inherit system;
-          overlays = self.overlays;
+          overlays = builtins.attrValues self.overlays;
         }
       );
 
@@ -53,10 +54,10 @@
     in
     {
 
-      overlays = [
-        gf-overlay
-        my-overlay
-      ];
+      overlays = {
+        gf-overlay = gf-overlay;
+        my-overlay = my-overlay;
+      };
 
       packages = forAllSystems (system: {
         inherit (nixpkgsFor.${system}) gf-with-rgl gf-rgl bnfc gf-wordnet;

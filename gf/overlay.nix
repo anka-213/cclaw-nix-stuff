@@ -1,8 +1,8 @@
 { sources ? import ../nix/sources.nix }:
-pkgs: oldpkgs: {
-  haskellPackages = oldpkgs.haskellPackages.override {
+final: prev: {
+  haskellPackages = prev.haskellPackages.override {
     overrides = haskellPackagesNew: _haskellPackagesOld:
-      with oldpkgs.haskell.lib;
+      with prev.haskell.lib;
       {
         # site = haskellPackagesNew.callPackage ./site.nix {};
         # gf-core = overrideCabal (haskellPackagesNew.callPackage ./gf-core.nix {}) (old: {
@@ -11,7 +11,7 @@ pkgs: oldpkgs: {
             # Fix utf8 encoding problems
             patches = [
               (
-                oldpkgs.fetchpatch {
+                prev.fetchpatch {
                   url = "https://github.com/anka-213/gf-core/commit/6f1ca05fddbcbc860898ddf10a557b513dfafc18.patch";
                   sha256 = "17vn3hncxm1dwbgpfmrl6gk6wljz3r28j191lpv5zx741pmzgbnm";
                 }
@@ -19,7 +19,7 @@ pkgs: oldpkgs: {
             ];
             configureFlags = "-f c-runtime";
             # jailbreak = true; # jailbreak dependecies
-            librarySystemDepends = [ pkgs.gf-pgf ];
+            librarySystemDepends = [ final.gf-pgf ];
           }
         );
         # gf-core = haskellPackagesNew.callPackage ./gf-core-c.nix {};
@@ -30,10 +30,10 @@ pkgs: oldpkgs: {
         )
           (
             _old: {
-              librarySystemDepends = [ pkgs.gf-pgf ];
+              librarySystemDepends = [ final.gf-pgf ];
             }
           );
       };
   };
-  gf-pgf = pkgs.callPackage ./c-runtime.nix { inherit (sources) gf-core; };
+  gf-pgf = final.callPackage ./c-runtime.nix { inherit (sources) gf-core; };
 }
