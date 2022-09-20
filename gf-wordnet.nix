@@ -1,4 +1,4 @@
-{ src, stdenvNoCC, gf, gf-rgl, ninja }:
+{ src, lib, stdenvNoCC, gf, gf-rgl, ninja, languages ? [ "Eng" "Fin" "Swe" "Spa" "Chi" ] }:
 
 stdenvNoCC.mkDerivation {
   name = "gf-wordnet";
@@ -20,7 +20,7 @@ stdenvNoCC.mkDerivation {
   preBuild = ''
     echo "$my_ninjaHeader" > build.ninja
 
-    for lang in Eng Swe Spa Chi; do
+    for lang in ${lib.strings.concatStringsSep " " languages}; do
       echo "build \$build_dir/WordNet$lang.gfo: gf WordNet$lang.gf \$build_dir/WordNet.gfo" >> build.ninja
     done
   '';
