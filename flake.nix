@@ -52,6 +52,7 @@
           gf-rgl = final.callPackage ./gf-rgl.nix { inherit sources; };
           gf-wordnet = final.callPackage ./gf-wordnet.nix { src = sources.gf-wordnet; };
           gf-with-rgl = final.callPackage ./gf-with-rgl.nix { };
+          gf-with-rgl-and-wordnet = final.callPackage ./gf-with-rgl-and-wordnet.nix { };
         };
     in
     {
@@ -62,7 +63,7 @@
       };
 
       packages = forAllSystems (system: {
-        inherit (nixpkgsFor.${system}) gf-with-rgl gf-rgl bnfc gf-wordnet;
+        inherit (nixpkgsFor.${system}) gf-with-rgl gf-rgl bnfc gf-wordnet gf-with-rgl-and-wordnet;
       });
 
       # defaultPackage = builtins.mapAttrs (_: pkgs: pkgs.lambda-launcher) self.packages;
