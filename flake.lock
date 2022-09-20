@@ -37,11 +37,11 @@
     "gf-rgl": {
       "flake": false,
       "locked": {
-        "lastModified": 1651147997,
-        "narHash": "sha256-W3YUs6Fhpr9AqHMFQrDHUehboT/QTTBDiMWbyJVoAiI=",
+        "lastModified": 1663265211,
+        "narHash": "sha256-N3loV+RlRHkeVOvLtAbK6LahTVxHTfJ2/yeAoTLCmwg=",
         "owner": "GrammaticalFramework",
         "repo": "gf-rgl",
-        "rev": "783e2f3831f6ac9efd2d74286bbd35032c44b964",
+        "rev": "0c57e45540f8de12f33bd07e834e478a280df0b3",
         "type": "github"
       },
       "original": {
@@ -54,11 +54,11 @@
     "gf-wordnet": {
       "flake": false,
       "locked": {
-        "lastModified": 1651166487,
-        "narHash": "sha256-P+ZFyQjf8nbG4VZw8MDaZee4O2oRK6G/abVj5nitOmU=",
+        "lastModified": 1663659559,
+        "narHash": "sha256-/+ci68mEeVetiJF7pGVHuOGWFFCA1R+fcM+/H9WdbUY=",
         "owner": "GrammaticalFramework",
         "repo": "gf-wordnet",
-        "rev": "8cc97d57bb5cf42de8d6d5efb97dda3a8ff6a0d8",
+        "rev": "9e2265a3849c2844595f41d8296313860a542d51",
         "type": "github"
       },
       "original": {
