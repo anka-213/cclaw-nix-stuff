@@ -23,7 +23,8 @@
     let
       systems = [ "x86_64-linux" "x86_64-darwin" ];
       # systems = [ "x86_64-darwin" ];
-      forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f system);
+      # forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f system);
+      forAllSystems = nixpkgs.lib.genAttrs systems;
 
       # Memoize nixpkgs for different platforms for efficiency.
       nixpkgsFor = forAllSystems (system:

@@ -17,6 +17,7 @@ final: prev: {
               #   }
               # )
               # ./encoding-fix.patch # Already applied to latest gf-core/master
+              ./revert-new-cabal-madness.patch
             ];
             configureFlags = "-f c-runtime";
             # jailbreak = true; # jailbreak dependecies
