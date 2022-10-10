@@ -5,7 +5,8 @@ on:
   #   # every day at 5am UTC
   #   - cron: '0 5 * * *'
   # push: # For testing
-  {} # Never: This is the flake branch
+  workflow_dispatch: # Only trigger manually
+  # {} # Never: This is the flake branch
   # Todo: Update the flake instead
 
 jobs:
