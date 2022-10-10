@@ -16,7 +16,7 @@ final: prev: {
               #     sha256 = "17vn3hncxm1dwbgpfmrl6gk6wljz3r28j191lpv5zx741pmzgbnm";
               #   }
               # )
-              ./encoding-fix.patch
+              # ./encoding-fix.patch # Already applied to latest gf-core/master
             ];
             configureFlags = "-f c-runtime";
             # jailbreak = true; # jailbreak dependecies
