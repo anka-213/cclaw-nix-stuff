@@ -1,5 +1,7 @@
 name: Update niv
 
+# TODO: https://github.com/DeterminateSystems/update-flake-lock
+
 on:
   # schedule:
   #   # every day at 5am UTC
