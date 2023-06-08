@@ -1,18 +1,18 @@
-diff --git a/src/runtime/python/test.py b/src/runtime/python/test.py
+diff --git a/test.py b/test.py
 index 4c3374650..0260802ca 100644
---- a/src/runtime/python/test.py
-+++ b/src/runtime/python/test.py
+--- a/test.py
++++ b/test.py
 @@ -13,7 +13,7 @@ source_lang = gr.languages["ParseEng"]
  target_lang = gr.languages["ParseBul"]
- 
+
  we = pgf.readExpr("UttImpSg PPos (ImpVP (UseV try_V))")
 -print source_lang.linearize(we)
 +print(source_lang.linearize(we))
- 
+
  sys.stdout.write("start cat: "+gr.startCat+"\n\n")
- 
+
 @@ -33,7 +33,7 @@ class Completer():
- 
+
  		while True:
  			try:
 -				(p,t,c) = self.i.next()
@@ -21,7 +21,7 @@ index 4c3374650..0260802ca 100644
  					self.tokens.add(t)
  					return t
 @@ -47,7 +47,7 @@ locale.setlocale(locale.LC_CTYPE, "")
- 
+
  while True:
  	try:
 -		line = raw_input("> ");

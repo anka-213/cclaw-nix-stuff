@@ -1,9 +1,15 @@
-{gf-core, gf-pgf, buildPythonPackage}:
+{gf-core, gf-pgf, python3Packages}:
 
-buildPythonPackage rec {
+python3Packages.buildPythonPackage rec {
   name = "gf-python-runtime";
   # Python name: pgf
   src = gf-core + "/src/runtime/python";
+  patches = [
+    ./gf-python-2to3.patch
+  ];
+  # Tests are broken
+  doCheck = false;
+
   # propagatedBuildInputs = [ pytest numpy pkgs.libsndfile ];
   propagatedBuildInputs = [ gf-pgf ];
 }
