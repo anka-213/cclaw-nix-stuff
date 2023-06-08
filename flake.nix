@@ -64,7 +64,7 @@
       };
 
       packages = forAllSystems (system: {
-        inherit (nixpkgsFor.${system}) gf-with-rgl gf-rgl bnfc gf-wordnet gf-with-rgl-and-wordnet;
+        inherit (nixpkgsFor.${system}) gf-with-rgl gf-rgl bnfc gf-wordnet gf-with-rgl-and-wordnet gf-python-runtime;
       });
 
       # defaultPackage = builtins.mapAttrs (_: pkgs: pkgs.lambda-launcher) self.packages;

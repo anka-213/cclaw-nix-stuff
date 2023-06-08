@@ -1,0 +1,40 @@
+diff --git a/src/runtime/python/test.py b/src/runtime/python/test.py
+index 4c3374650..0260802ca 100644
+--- a/src/runtime/python/test.py
++++ b/src/runtime/python/test.py
+@@ -13,7 +13,7 @@ source_lang = gr.languages["ParseEng"]
+ target_lang = gr.languages["ParseBul"]
+ 
+ we = pgf.readExpr("UttImpSg PPos (ImpVP (UseV try_V))")
+-print source_lang.linearize(we)
++print(source_lang.linearize(we))
+ 
+ sys.stdout.write("start cat: "+gr.startCat+"\n\n")
+ 
+@@ -33,7 +33,7 @@ class Completer():
+ 
+ 		while True:
+ 			try:
+-				(p,t,c) = self.i.next()
++				(p,t,c) = next(self.i)
+ 				if t not in self.tokens:
+ 					self.tokens.add(t)
+ 					return t
+@@ -47,7 +47,7 @@ locale.setlocale(locale.LC_CTYPE, "")
+ 
+ while True:
+ 	try:
+-		line = raw_input("> ");
++		line = input("> ");
+ 	except EOFError:
+ 		sys.stdout.write("\n")
+ 		readline.set_completer(None)
+@@ -60,6 +60,6 @@ while True:
+ 	try:
+ 		for (p,e) in source_lang.parse(line, n=1):
+ 			sys.stdout.write("["+str(p)+"] "+str(e)+"\n")
+-			print target_lang.linearize(e)
++			print(target_lang.linearize(e))
+ 	except pgf.ParseError as e:
+-		print e.message
++		print(e.message)

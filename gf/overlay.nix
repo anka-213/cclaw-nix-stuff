@@ -38,4 +38,5 @@ final: prev: {
       };
   };
   gf-pgf = final.callPackage ./c-runtime.nix { inherit (sources) gf-core; };
+  gf-python-runtime = final.callPackage ./gf-python-runtime.nix { inherit (sources) gf-core; };
 }
