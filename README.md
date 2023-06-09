@@ -55,6 +55,13 @@ nix profile install github:anka-213/cclaw-nix-stuff/nix-flakes#gf-with-rgl
 nix profile install github:anka-213/cclaw-nix-stuff/nix-flakes#gf-with-rgl-and-wordnet
 ```
 
+or check what would be installed using
+
+```
+nix build --dry-run github:anka-213/cclaw-nix-stuff/nix-flakes#gf-with-rgl
+nix build --dry-run github:anka-213/cclaw-nix-stuff/nix-flakes#gf-with-rgl-and-wordnet
+```
+
 ## Using python or haskell with runtimes installed
 
 In order to get an ad-hoc environment with the python runtime or haskell runtime installed, you can use the following:
