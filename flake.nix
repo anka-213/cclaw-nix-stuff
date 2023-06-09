@@ -74,6 +74,12 @@
         # nix shell \
         #     --impure \
         #     --expr "with builtins; with getFlake (toString ./.); (getAttr currentSystem legacyPackages).python3.withPackages (ps: with ps; [ gf-pgf gnureadline ])"
+        # And similarly for haskell packages:
+        # nix shell \
+        #     --impure \
+        #     --expr "with builtins; with getFlake (toString ./.); (getAttr currentSystem legacyPackages).haskellPackages.ghcWithPackages (ps: with ps; [ gf-core gf-c-bindings ])"
+        # Replace (toString ./.) with "github:anka-213/cclaw-nix-stuff/nix-flakes" to use the version from github instead of the local directory
+        # or "github:anka-213/cclaw-nix-stuff/some-git-commit-hash" to use a specific git commit version
         inherit (nixpkgsFor.${system}) python3 haskellPackages;
       });
 
