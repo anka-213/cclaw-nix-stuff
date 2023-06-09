@@ -1,4 +1,4 @@
-{ gf
+{ gf-core
 , gf-rgl
 , gf-wordnet
 , makeWrapper
@@ -7,18 +7,18 @@
 
 # TODO: Make a generic wrapper for any combination of libs
 runCommandLocal
-  (gf.name + "-with-rgl-and-wordnet")
+  (gf-core.name + "-with-rgl-and-wordnet")
 {
 
   passthru = {
     preferLocalBuild = true;
-    inherit (gf) version meta;
+    inherit (gf-core) version meta;
   };
 }
   ''
     . ${makeWrapper}/nix-support/setup-hook
 
     prg=gf
-    makeWrapper ${gf}/bin/$prg $out/bin/$prg \
+    makeWrapper ${gf-core}/bin/$prg $out/bin/$prg \
       --suffix GF_LIB_PATH : ${gf-rgl}/share/gf/lib:${gf-wordnet}/share/gf/lib
   ''

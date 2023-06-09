@@ -1,9 +1,9 @@
-{ sources, stdenv, ghc, gf }:
+{ sources, stdenv, ghc, gf-core }:
 
 stdenv.mkDerivation {
   name = "gf-rgl";
   # src = ./.;
-  buildInputs = [ ghc gf ];
+  buildInputs = [ ghc gf-core ];
   # doc requirements: [graphviz-nox]
   src = sources.gf-rgl;
   buildPhase = ''
