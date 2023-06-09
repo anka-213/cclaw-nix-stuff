@@ -7,8 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2.3.2
-    - uses: cachix/install-nix-action@v17
-    - uses: cachix/cachix-action@v10
+    - uses: cachix/install-nix-action@v21
+    - uses: cachix/cachix-action@v12
       with:
         name: cclaw
         signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
