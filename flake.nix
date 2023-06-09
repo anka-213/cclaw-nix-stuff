@@ -68,6 +68,15 @@
         pythonWithPGF = nixpkgsFor.${system}.python3.withPackages(ps: [ps.gf-pgf]);
       });
 
+      legacyPackages = forAllSystems (system: {
+        # Python-version including gf-pgf
+        # Allows making ad-hoc environments like this:
+        # nix shell \
+        #     --impure \
+        #     --expr "with builtins; with getFlake (toString ./.); (getAttr currentSystem legacyPackages).python3.withPackages (ps: with ps; [ gf-pgf gnureadline ])"
+        inherit (nixpkgsFor.${system}) python3 haskellPackages;
+      });
+
       # defaultPackage = builtins.mapAttrs (_: pkgs: pkgs.lambda-launcher) self.packages;
 
       # defaultApp = builtins.mapAttrs (_: pkg: {
