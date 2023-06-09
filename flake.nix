@@ -63,9 +63,9 @@
         my-overlay = my-overlay;
       };
 
-      packages = forAllSystems (system: rec {
+      packages = forAllSystems (system: {
         inherit (nixpkgsFor.${system}) gf-with-rgl gf-rgl bnfc gf-wordnet gf-with-rgl-and-wordnet gf-python-runtime;
-        pythonWithPGF = nixpkgsFor.${system}.python3.withPackages(ps: [gf-python-runtime]);
+        pythonWithPGF = nixpkgsFor.${system}.python3.withPackages(ps: [ps.gf-pgf]);
       });
 
       # defaultPackage = builtins.mapAttrs (_: pkgs: pkgs.lambda-launcher) self.packages;

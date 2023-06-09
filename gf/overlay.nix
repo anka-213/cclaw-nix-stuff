@@ -5,7 +5,7 @@ final: prev: {
       with prev.haskell.lib;
       {
         # site = haskellPackagesNew.callPackage ./site.nix {};
-        # gf-core = overrideCabal (haskellPackagesNew.callPackage ./gf-core.nix {}) (old: {
+        # gf-core = overrideCabal (haskellPackagesNew.callPackage ./gf-core.nix {}) (old: {}
         gf-core = overrideCabal (haskellPackagesNew.callCabal2nix "gf" sources.gf-core {}) (
           _old: {
             # Fix utf8 encoding problems
@@ -39,4 +39,9 @@ final: prev: {
   };
   gf-pgf = final.callPackage ./c-runtime.nix { inherit (sources) gf-core; };
   gf-python-runtime = final.callPackage ./gf-python-runtime.nix { inherit (sources) gf-core; };
+  python3 = let
+      packageOverrides = python-self: python-super: {
+        gf-pgf = final.gf-python-runtime;
+      };
+    in prev.python3.override {inherit packageOverrides; self = final.python3;};
 }
