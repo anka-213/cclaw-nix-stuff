@@ -48,7 +48,7 @@
             final.haskellPackages.callCabal2nix "bnfc" (sources.bnfc + "/source") { }
           );
           # inherit (import ./gf-core.nix {inherit nixpkgs sources; }) gf;
-          gf = justStaticExecutables (final.haskellPackages.gf-core);
+          gf-core = justStaticExecutables (final.haskellPackages.gf-core);
           # gf-rgl = import ./build-gf-rgl.nix {inherit final ; };
           gf-rgl = final.callPackage ./gf-rgl.nix { inherit sources; };
           gf-wordnet = final.callPackage ./gf-wordnet.nix { src = sources.gf-wordnet; };
@@ -64,7 +64,7 @@
       };
 
       packages = forAllSystems (system: {
-        inherit (nixpkgsFor.${system}) gf-with-rgl gf-rgl bnfc gf-wordnet gf-with-rgl-and-wordnet gf-python-runtime;
+        inherit (nixpkgsFor.${system}) gf-core gf-with-rgl gf-rgl bnfc gf-wordnet gf-with-rgl-and-wordnet gf-python-runtime;
         pythonWithPGF = nixpkgsFor.${system}.python3.withPackages(ps: [ps.gf-pgf]);
       });
 
