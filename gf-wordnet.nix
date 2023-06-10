@@ -1,4 +1,4 @@
-{ src, lib, stdenvNoCC, gf, gf-rgl, ninja, languages ? [ "Eng" "Fin" "Swe" "Spa" "Chi" ] }:
+{ src, lib, stdenvNoCC, gf-core, gf-rgl, ninja, languages ? [ "Eng" "Fin" "Swe" "Spa" "Chi" ] }:
 
 stdenvNoCC.mkDerivation {
   name = "gf-wordnet";
@@ -11,7 +11,7 @@ stdenvNoCC.mkDerivation {
     gf_flags = --batch --quiet --gfo-dir=$build_dir
 
     rule gf
-      command = ${gf}/bin/gf $gf_flags $in
+      command = ${gf-core}/bin/gf $gf_flags $in
 
     build $build_dir/WordNet.gfo: gf WordNet.gf
   '';
