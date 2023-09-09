@@ -1,0 +1,19 @@
+name: "Publish every Git push to nix-flakes to FlakeHub"
+on:
+  push:
+    branches:
+      - "nix-flakes"
+jobs:
+  flakehub-publish:
+    runs-on: "ubuntu-latest"
+    permissions:
+      id-token: "write"
+      contents: "read"
+    steps:
+      - uses: "actions/checkout@v3"
+      - uses: "DeterminateSystems/nix-installer-action@main"
+      - uses: "DeterminateSystems/flakehub-push@main"
+        with:
+          name: "anka-213/grammatical-framework-nix"
+          rolling: true
+          visibility: "public"
