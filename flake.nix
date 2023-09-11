@@ -100,4 +100,10 @@
       # }) nixpkgs.legacyPackages;
 
     };
+
+    nixConfig = {
+      extra-substituters = [ "https://cclaw.cachix.org" ];
+      extra-trusted-public-keys = [ "cclaw.cachix.org-1:uBByGxyttKSKDJyN97r1MkfMA9SYv2ENOHKh1YgjGKU=" ];
+      allow-import-from-derivation = "true";
+    };
 }
