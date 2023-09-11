@@ -1,4 +1,4 @@
-{ sources ? import ../nix/sources.nix , ghc-version ? "ghc8107"}:
+{ sources ? import ../nix/sources.nix, ghc-version ? "ghc8107" }:
 final: prev: {
   haskellPackages = prev.haskell.packages.${ghc-version}.override {
     overrides = haskellPackagesNew: _haskellPackagesOld:
@@ -6,7 +6,7 @@ final: prev: {
       {
         # site = haskellPackagesNew.callPackage ./site.nix {};
         # gf-core = overrideCabal (haskellPackagesNew.callPackage ./gf-core.nix {}) (old: {}
-        gf-core = overrideCabal (haskellPackagesNew.callCabal2nix "gf" sources.gf-core {}) (
+        gf-core = overrideCabal (haskellPackagesNew.callCabal2nix "gf" sources.gf-core { }) (
           _old: {
             # Fix utf8 encoding problems
             patches = [
@@ -19,17 +19,18 @@ final: prev: {
               # ./encoding-fix.patch # Already applied to latest gf-core/master
               ./revert-new-cabal-madness.patch
             ];
-            configureFlags = "-f c-runtime";
+            configureFlags = [ "-f" "c-runtime" ];
             # jailbreak = true; # jailbreak dependecies
             librarySystemDepends = [ final.gf-pgf ];
           }
         );
         # gf-core = haskellPackagesNew.callPackage ./gf-core-c.nix {};
         # gf-c-bindings = haskellPackagesNew.callPackage ./haskell-bind.nix {};
-        gf-c-bindings = overrideCabal (
-          haskellPackagesNew.callCabal2nix "pgf2" (sources.gf-core + "/src/runtime/haskell-bind")
-            { gu = null; pgf = null; }
-        )
+        gf-c-bindings = overrideCabal
+          (
+            haskellPackagesNew.callCabal2nix "pgf2" (sources.gf-core + "/src/runtime/haskell-bind")
+              { gu = null; pgf = null; }
+          )
           (
             _old: {
               librarySystemDepends = [ final.gf-pgf ];
@@ -39,9 +40,11 @@ final: prev: {
   };
   gf-pgf = final.callPackage ./c-runtime.nix { inherit (sources) gf-core; };
   gf-python-runtime = final.callPackage ./gf-python-runtime.nix { inherit (sources) gf-core; };
-  python3 = let
+  python3 =
+    let
       packageOverrides = python-self: python-super: {
         gf-pgf = final.gf-python-runtime;
       };
-    in prev.python3.override {inherit packageOverrides; self = final.python3;};
+    in
+    prev.python3.override { inherit packageOverrides; self = final.python3; };
 }
