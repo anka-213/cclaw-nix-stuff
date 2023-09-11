@@ -6,6 +6,11 @@ stdenv.mkDerivation {
   buildInputs = [ ghc gf-core ];
   # doc requirements: [graphviz-nox]
   src = sources.gf-rgl;
+  # Keep references to source, so go to definition works
+  postUnpack = ''
+    rm -r source/src
+    ln -s $src/src source/src
+  '';
   buildPhase = ''
     export LC_ALL="C.UTF-8"
     runghc Setup.hs build
